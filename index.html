@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- All Meta Tag  -->
+	 	<meta charset="UTF-8">
+	  	<meta name="description" content="">
+	  	<meta name="keywords" content="">
+	  	<meta name="author" content="">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Test task</title>
+	<!-- font awesome -->
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<!-- Style Css -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body data-theme="dark">
+
+	<main class="container">
+		<!-- sign up form start -->
+		<form action="index.html" method="post" class="sign-up-form">
+			<h1> Sign Up </h1>
+			<fieldset>
+			  <legend><span class="number">1</span> Your Basic Info</legend>			  
+			  <label for="email">Email:</label>
+			  <input type="email" id="mail" name="user_email">
+		      <label for="password">Password:</label>
+			  <input type="password" id="password" name="user_password">
+			  <label>Age:</label>
+			  <label for="under_13" class="light cs_radio"><input type="radio" id="under_13" value="under_13" checked name="user_age"><span class="checkmark"></span> Under 13</label>
+			  <label for="over_13" class="light cs_radio"><input type="radio" id="over_13" value="over_13" name="user_age"><span class="checkmark"></span> Over 13</label>
+			</fieldset>
+			<fieldset>  
+			  <legend><span class="number">2</span> Your Profile</legend>
+			 <label for="bio">Bio:</label>
+			  <textarea id="bio" name="user_bio"></textarea>
+			
+			 <label for="job">Job Role:</label>
+			  <select id="job" name="user_job">
+				<optgroup label="Web">
+				  <option value="frontend_developer">Front-End Developer</option>
+				  <option value="php_developer">PHP Developer</option>
+				  <option value="python_developer">Python Developer</option>
+				  <option value="rails_developer">Rails Developer</option>
+				  <option value="web_designer">Web Designer</option>
+				  <option value="wordpress_developer">Wordpress Developer</option>
+				</optgroup>
+				<optgroup label="Mobile">
+				  <option value="android_developer">Android Developer</option>
+				  <option value="ios_developer">IOS Developer</option>
+				  <option value="mobile_designer">Mobile Designer</option>
+				</optgroup>
+				<optgroup label="Business">
+				  <option value="business_owner">Business Owner</option>
+				  <option value="freelancer">Freelancer</option>
+				</optgroup>
+			  </select>
+			  <label>Interests:</label>
+			  <label class="light cs_checkbox" for="development"><input type="checkbox" id="development" value="interest_development" name="user_interest"><span class="checkmark"></span> Development</label>
+			  <label class="light cs_checkbox" for="design"><input type="checkbox" id="design" value="interest_design" name="user_interest"><span class="checkmark"></span> Design</label>
+			  <label class="light cs_checkbox" for="business"><input type="checkbox" id="business" value="interest_business" name="user_interest"><span class="checkmark"></span> Business</label>
+			 </fieldset>
+		   <button type="submit">Sign Up</button>
+		</form>
+		<!-- sign up form end -->
+		<!-- table start -->
+		<div class="data-table">
+		  <table>
+			<thead>
+			  <tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Job Title</th>
+				<th>Twitter</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td data-column="First Name">James</td>
+				<td data-column="Last Name">Matman</td>
+				<td data-column="Job Title">Chief Sandwich Eater</td>
+				<td data-column="Twitter">@james</td>
+			  </tr>
+			  <tr>
+				<td data-column="First Name">Andor</td>
+				<td data-column="Last Name">Nagy</td>
+				<td data-column="Job Title">Designer</td>
+				<td data-column="Twitter">@andornagy</td>
+			  </tr>
+			  <tr>
+				<td data-column="First Name">Tamas</td>
+				<td data-column="Last Name">Biro</td>
+				<td data-column="Job Title">Game Tester</td>
+				<td data-column="Twitter">@tamas</td>
+			  </tr>
+			  <tr>
+				<td data-column="First Name">Zoli</td>
+				<td data-column="Last Name">Mastah</td>
+				<td data-column="Job Title">Developer</td>
+				<td data-column="Twitter">@zoli</td>
+			  </tr>
+			  <tr>
+				<td data-column="First Name">Szabi</td>
+				<td data-column="Last Name">Nagy</td>
+				<td data-column="Job Title">Chief Sandwich Eater</td>
+				<td data-column="Twitter">@szabi</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+		<!-- table end -->
+		<!-- card section start -->
+		<div class="card-main">
+			<div class="card">
+				<i class="fa fa-male" aria-hidden="true"></i>
+				<div class="card-deatil">
+				<h4><b>John Doe</b></h4> 
+				<p>Architect & Engineer</p> 
+				</div>
+			</div>
+			<div class="card">
+				<i class="fa fa-female" aria-hidden="true"></i>
+				<div class="card-deatil">
+				<h4><b>John Doe</b></h4> 
+				<p>Interior Designer</p> 
+				</div>
+			</div>
+		</div>
+		<!-- card section end -->
+
+		<!-- color change button section start -->
+		<div class="btn-main theme-buttons">
+			<button id="dark" class="theme-button active" type="submit">Dark</button>
+			<button id="light" class="theme-button" type="submit">Light</button>
+			<button id="contrast" class="theme-button" type="submit">Contrast</button>
+		</div>
+		<!-- color change button section end -->
+	</main>
+
+	<!-- main jqeury -->
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript">
+			$(".theme-buttons button").click(function(){
+
+				//theme toggle
+				var this_theme = $(this).attr("id");
+				$("body").attr("data-theme",this_theme);
+
+				if(this_theme == "light"){
+					$(':root').css('--primary-color', "#0077b6");
+					$(':root').css('--secondary-color', "#468faf");
+				} else if(this_theme == "dark"){
+					$(':root').css('--primary-color', "#90e0ef");
+					$(':root').css('--secondary-color', "#dedbd2");
+				} else if(this_theme == "contrast"){
+					$(':root').css('--primary-color', "#e63946");
+					$(':root').css('--secondary-color', "#457b9d");
+				}
+
+				//class toggle
+				$(".theme-buttons button").removeClass("active");
+				$(this).addClass("active");				
+				
+			});
+		</script>
+</body>
+</html>
